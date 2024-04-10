@@ -6,17 +6,28 @@ piem. Zinot ka kurss ir 1.0831, padodot 10 eur, rezultāts būs 10.83 usd
 -----
 
 2 veiksmīgi scenāriji (happy path):
+Ja pievienosim grāmatu bibliotēkai, tad ievadot title, isbn, pageCount, authors, publishDate un description, rezultāts būs: "Book added successfully."
+Ja meklējam grāmatu pēc nosaukuma, tad, ievadot "! Flex 4", rezultāts būs: {
+Matching books:
+1933988762 - Hello! Flex 4 by Peter Armstrong
+}
+4 izmantošanas scenāriji (use-case):
+Izvēloties režīmu "Meklēt pēc grāmatas nosaukuma daļas", mēs sagaidām, ka programma ņems mūsu ievadīto grāmatas nosaukuma daļu, atvērs pieejamo grāmatu sarakstu un sniegs mums visus to grāmatu variantus, kuru nosaukumā ir mūsu ievadītais pieprasījums.
 
+ievadot pieprasījumu sakārtot visas grāmatas pēc lapu skaita no vairāk uz mazāk, mēs sagaidām, ka programma ņems visu grāmatu sarakstu, salīdzinās un sakārtos tās pēc lapu skaita no vairāk uz mazāk. Pēc tam programma izvadīs iegūto sarakstu
 
+Ievadot pieprasījumu par jaunas grāmatas pievienošanu bibliotēkai, mēs sagaidām, ka programma lūgs ievadīt datus par grāmatu (nosaukumu, numuru, lappušu skaitu, autoru, izdošanas datumu un aprakstu), pēc kā grāmata tiks pievienota programmas iekšējā grāmatu sarakstā. Jaunā grāmata tiks pievienota atsevišķā json failā tikai tad, kad lietotājs vēlēsies iziet no programmas, saglabājot visas izmaiņas.
 
-5 izmantošanas scenāriji (use-case):
+Ievadot pieprasījumu atzīmēt grāmatu kā paņemtu, mēs sagaidām, ka programma pieprasīs vēlamās grāmatas ISBN kodu, sameklēs sarakstā grāmatu ar ievadīto kodu un atzīmēs to kā paņemtu. Līdzīgi kā jaunas grāmatas gadījumā, atzīme tiks pievienota atsevišķā json failā tikai tad, ja lietotājs vēlēsies iziet no programmas un saglabāt visas izmaiņas.
 
+4 robežas scenāriji (edge-case):
+Ja meklējam grāmatu pēc nosaukuma, tad, ievadot "", programma atgriezīs visas grāmatas
 
+Ja veidojam grāmatu, tad nosaukumā ierakstot "", programma izveidos grāmatu bez nosaukuma
 
+Ja veidojam grāmatu, tad lappušu skaitā ievadot "" vai " ", programma ģenerēs kļūdu
 
-
-
-5 robežas scenāriji (edge-case):
+Ja grāmatu atzīmējam kā paņemtu, tad atzīmējot to divas reizes, programma neinformēs lietotāju, ka tā jau ir paņemta
 
 
 
